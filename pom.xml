@@ -116,13 +116,13 @@
 
     <distributionManagement>
         <repository>
-            <id>maven-releases</id>
-            <name>Releases</name>
+            <id>sakthi</id>
+            <name>sakthi</name>
             <url>http://172.27.101.4:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>maven-snapshots</id>
-            <name>Snapshots</name>
+            <id>sakthi</id>
+            <name>sakthi</name>
             <url>http://172.27.101.4:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
