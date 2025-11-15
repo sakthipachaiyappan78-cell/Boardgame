@@ -17,7 +17,7 @@
     <artifactId>database_service_project</artifactId>
 
     <!-- VERSION UPDATED TO PREVENT NEXUS 400 ERROR -->
-    <version>0.0.5</version>
+    <version>0.0.6</version>
 
     <packaging>jar</packaging>
 
