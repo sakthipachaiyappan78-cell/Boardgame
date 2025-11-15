@@ -15,12 +15,10 @@
 
     <groupId>com.javaproject</groupId>
     <artifactId>database_service_project</artifactId>
-
-    <!-- Use SNAPSHOT for ongoing development -->
+    <!-- Use SNAPSHOT for development to avoid overwriting release artifacts -->
     <version>0.0.6-SNAPSHOT</version>
 
     <packaging>jar</packaging>
-
     <name>database_service_project</name>
     <description>Spring Boot Database Service Project</description>
 
@@ -34,22 +32,19 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot starters -->
+        <!-- Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -62,7 +57,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Thymeleaf Security Extras -->
+        <!-- Thymeleaf Extras -->
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
@@ -75,13 +70,12 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Tests -->
+        <!-- Testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
@@ -91,7 +85,7 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot plugin -->
+            <!-- Spring Boot -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -121,17 +115,16 @@
         </plugins>
     </build>
 
-    <!-- Distribution Management for Nexus -->
+    <!-- Nexus / Artifactory -->
     <distributionManagement>
         <repository>
-            <id>sakthi</id>
-            <name>Releases</name>
+            <id>sakthi-releases</id>
+            <name>Sakthi Releases</name>
             <url>http://172.27.101.4:8081/repository/maven-releases/</url>
         </repository>
-
         <snapshotRepository>
             <id>sakthi-snapshots</id>
-            <name>Snapshots</name>
+            <name>Sakthi Snapshots</name>
             <url>http://172.27.101.4:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
