@@ -16,8 +16,8 @@
     <groupId>com.javaproject</groupId>
     <artifactId>database_service_project</artifactId>
 
-    <!-- VERSION UPDATED TO PREVENT NEXUS 400 ERROR -->
-    <version>0.0.6</version>
+    <!-- Use SNAPSHOT for ongoing development -->
+    <version>0.0.7-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 
@@ -87,7 +87,6 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -122,17 +121,17 @@
         </plugins>
     </build>
 
-    <!-- NEXUS SETTINGS FIXED -->
+    <!-- Distribution Management for Nexus -->
     <distributionManagement>
         <repository>
             <id>sakthi</id>
-            <name>sakthi</name>
+            <name>Releases</name>
             <url>http://172.27.101.4:8081/repository/maven-releases/</url>
         </repository>
 
         <snapshotRepository>
-            <id>sakthi</id>
-            <name>sakthi</name>
+            <id>sakthi-snapshots</id>
+            <name>Snapshots</name>
             <url>http://172.27.101.4:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
