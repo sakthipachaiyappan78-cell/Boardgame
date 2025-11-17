@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +14,8 @@
 
     <groupId>com.javaproject</groupId>
     <artifactId>database_service_project</artifactId>
-    <!-- Use SNAPSHOT for development to avoid overwriting release artifacts -->
+
+    <!-- Use SNAPSHOT for dev builds; Jenkins will deploy with timestamp -->
     <version>0.0.4-SNAPSHOT</version>
 
     <packaging>jar</packaging>
@@ -24,6 +24,8 @@
 
     <properties>
         <java.version>11</java.version>
+
+        <!-- JaCoCo -->
         <jacoco.version>0.8.7</jacoco.version>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
@@ -32,19 +34,23 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot -->
+
+        <!-- Spring Boot starter dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -57,7 +63,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Thymeleaf Extras -->
+        <!-- Thymeleaf Security extras -->
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
@@ -76,22 +82,25 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Spring Boot -->
+
+            <!-- Spring Boot plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <!-- JaCoCo -->
+            <!-- JaCoCo Code Coverage Plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -112,21 +121,27 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
-    <!-- Nexus / Artifactory -->
+    <!-- Nexus Repository Configuration -->
     <distributionManagement>
+
+        <!-- For mvn deploy when version does NOT contain -SNAPSHOT -->
         <repository>
             <id>maven-releases</id>
             <name>maven-releases</name>
             <url>http://172.27.101.4:8081/repository/maven-releases/</url>
         </repository>
+
+        <!-- For mvn deploy when version contains -SNAPSHOT -->
         <snapshotRepository>
             <id>maven-snapshots</id>
             <name>maven-snapshots</name>
             <url>http://172.27.101.4:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
+
     </distributionManagement>
 
 </project>
