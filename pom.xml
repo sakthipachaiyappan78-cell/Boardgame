@@ -16,7 +16,7 @@
     <groupId>com.javaproject</groupId>
     <artifactId>database_service_project</artifactId>
     <!-- Use SNAPSHOT for development to avoid overwriting release artifacts -->
-    <version>0.0.8</version>
+    <version>0.0.4-SNAPSHOT</version>
 
     <packaging>jar</packaging>
     <name>database_service_project</name>
@@ -118,13 +118,13 @@
     <!-- Nexus / Artifactory -->
     <distributionManagement>
         <repository>
-            <id>sakthi-releases</id>
-            <name>Sakthi Releases</name>
+            <id>maven-releases</id>
+            <name>maven-releases</name>
             <url>http://172.27.101.4:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>sakthi-snapshots</id>
-            <name>Sakthi Snapshots</name>
+            <id>maven-snapshots</id>
+            <name>maven-snapshots</name>
             <url>http://172.27.101.4:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
